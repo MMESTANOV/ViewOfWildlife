@@ -1,0 +1,16 @@
+﻿@using ViewOfWildlife.Components
+
+<ul class="navbar-nav flex-grow-1">
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Photo" asp-action="All">All Photos</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Author" asp-action="AllAuthors">All Authors</a>
+    </li>
+    @if (this.User?.Identity != null && this.User.Identity.IsAuthenticated)
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Photo" asp-action="Mine">My Photos</a>
+        </li>
+    }
+</ul>
